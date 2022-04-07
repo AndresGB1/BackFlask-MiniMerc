@@ -7,9 +7,4 @@ postgres = psycopg2.connect(
     port="5432",
     password="14912582fa76ffafdb62ffdf8dc464814738a9de703028ed73650614854a57fa")
 
-conexion = postgres.cursor()
 
-conexion.execute("select * from usuario")
-print(conexion.fetchall())
-
-conexion.close()
