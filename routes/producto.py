@@ -13,5 +13,5 @@ def get_productos():
     producto = conexion.fetchall()
     conexion.close()
     print(producto)
-    return jsonify(producto)
+    return jsonify(str(list(producto)))
 
