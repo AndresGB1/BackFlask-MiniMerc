@@ -1,10 +1,10 @@
 from flask import Flask
 from routes import rutas
-
+from flask_cors import CORS 
 
 app = Flask(__name__)
-
 app.register_blueprint(rutas)
+cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 
 @app.route('/')
