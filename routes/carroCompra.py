@@ -25,7 +25,7 @@ def get_carroCompra_username(username):
     return jsonify(carroCompra)
 
 """POST pasando como paramentro categoria, marca, cantidad, estado, fecha"""
-@rutas.route("/carroCompra", methods=["POST"])
+@rutas.route("/carroComprap", methods=["POST"])
 def post_carroCompra():
     """Agregar un carro de compras"""
     con = con_postgres.postgres

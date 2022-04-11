@@ -4,4 +4,5 @@ rutas = Blueprint('rutas', __name__)
 
 from .carroCompra import *
 from .producto import *
+from .variante import *
 from .usuario import *
