@@ -13,15 +13,13 @@ def get_variante(id):
     print(variante)
     return jsonify(variante)
 
-@rutas.route("/variante", methods=["GET"])
-def get_variantes():
-    """Obtener todas las variantes"""
+    
+@rutas.route("/producto/<string:id>/variantes", methods=["GET"])
+def get_variante_producto(id):
+    """Obtener variante"""
     con = con_postgres.postgres
     conexion = con.cursor()
-    conexion.execute("select * from variante")
-    variante = conexion.fetchall()   
+    conexion.execute("select * from variante where producto = {0}".format(id))
+    variantes = conexion.fetchall()   
     conexion.close()
-    print(variante)
-    return jsonify(variante)
-    
-
+    return jsonify(variantes)
