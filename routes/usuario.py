@@ -12,7 +12,6 @@ def get_usuario(username):
     conexion.execute("select * from usuario where username ='{0}'".format(username))
     usuario = conexion.fetchall()   
     conexion.close()
-    print(usuario)
     return jsonify(usuario)
 
 
@@ -34,5 +33,4 @@ def get_usuarios():
     conexion.execute("select * from usuario")
     usuarios = conexion.fetchall()   
     conexion.close()
-    print(usuarios)
     return jsonify(usuarios)

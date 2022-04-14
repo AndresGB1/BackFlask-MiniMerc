@@ -1,10 +1,4 @@
 import redis
 
-username = input("Username: ")
+redis = redis.Redis(host='localhost',port=6379)
 
-r = redis.Redis(host='localhost',port=6379)
-
-r.set('username', username)
-
-print(r.get('username'))
-r.flushdb()

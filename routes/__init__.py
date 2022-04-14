@@ -7,3 +7,4 @@ from .producto import *
 from .variante import *
 from .usuario import *
 from .login import *
+from .categoria import *

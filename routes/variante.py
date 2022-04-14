@@ -10,7 +10,6 @@ def get_variante(id):
     conexion.execute("select * from variante where id_variante = {0}".format(id))
     variante = conexion.fetchall()   
     conexion.close()
-    print(variante)
     return jsonify(variante)
 
     
