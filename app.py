@@ -3,6 +3,7 @@ from routes import login, rutas
 from routes.login import api
 from flask_cors import CORS 
 from flask_jwt_extended import JWTManager
+from datetime import timedelta
 
 app = Flask(__name__)
 app.register_blueprint(rutas)

@@ -4,7 +4,6 @@ from flask import jsonify
 from conexion import con_postgres, con_redis
 from flask_jwt_extended import jwt_required
 from . import rutas
-import json
 import ast
 
 @rutas.route("/productos", methods=["GET"])
@@ -50,13 +49,5 @@ def get_producto(id):
     conexion.close()
     return jsonify(producto)
 
-@rutas.route("/productos/<string:carro>", methods=["GET"])
-@jwt_required()
-def get_productos_carro(carro):
-    """Obtener productos por carro"""
-    con = con_postgres.postgres
-    conexion = con.cursor()
-    conexion.execute("select * from producto where id_carro = '{0}'".format(carro))
-    producto = conexion.fetchall()
-    conexion.close()
-    return jsonify(producto)
+
+
