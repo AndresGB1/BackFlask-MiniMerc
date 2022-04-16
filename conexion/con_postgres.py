@@ -1,10 +1,13 @@
+import os
 import psycopg2
+from dotenv import load_dotenv
+load_dotenv()
 
 postgres = psycopg2.connect(
-    host="ec2-3-225-213-67.compute-1.amazonaws.com",
-    database="dd1jsit7sca899",
-    user="vwmlgzrbsknkkc",
-    port="5432",
-    password="14912582fa76ffafdb62ffdf8dc464814738a9de703028ed73650614854a57fa")
-
+    host=os.environ.get("HOST_POSTGRESQL"),
+    database=os.environ.get("DATABASE_POSTGRESQL"),
+    user=os.environ.get("USER_POSTGRESQL"),
+    port=os.environ.get("PORT_POSTGRESQL"),
+    password=os.environ.get("PASSWORD_POSTGRESQL")
+)
 
