@@ -20,10 +20,8 @@ def get_carroCompra_username(username):
             "select * from carroCompra where comprador = '{0}' and estado = 'P'".format(username))
         carroCompra = conexion.fetchall()
         conexion.close()
-        print("carroCompra: ", carroCompra[0])
         return jsonify(carroCompra[0])
     else:
-        print("Retornando de Redis Only GET")
         print(conexion.decode("utf-8"))
         return jsonify(eval(conexion.decode("utf-8"))[0])
 

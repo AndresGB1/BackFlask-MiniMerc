@@ -9,6 +9,7 @@ app = Flask(__name__)
 app.register_blueprint(rutas)
 app.register_blueprint(api)
 
+
 app.config["JWT_SECRET_KEY"] = "dajoasdoaijasdi121312ioaajo"
 jwt = JWTManager(app)
 

@@ -10,5 +10,4 @@ def get_comprador(id):
     conexion.execute("select * from comprador where id_comprador = {0}".format(id))
     comprador = conexion.fetchall()   
     conexion.close()
-    print(comprador)
     return jsonify(comprador)
